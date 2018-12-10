@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/feeheadmanagement/db" VERSION="2018121010" COMMENT="XMLDB file for Moodle local/feeheadmanagement"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+    <TABLES>
+        <TABLE NAME="fee_category" COMMENT="This table saves information about fee category in an lms.">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="fee category id"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="fee category name"/>
+                <FIELD NAME="short_name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="fee category short name"/>
+                <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="description of fee category"/>
+                <FIELD NAME="organization" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="organization id"/>
+                <FIELD NAME="deleted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="deleted"/>
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="fee category creation time"/>
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="updation time"/>
+                <FIELD NAME="modifierid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="modified by"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for fee category."/>
+            </KEYS>
+        </TABLE>
+    
+        <TABLE NAME="fee_head" COMMENT="This table saves information about fee head in an lms">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="fee head id"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="fee head name"/>
+                <FIELD NAME="short_name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="fee head short name"/>
+                <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="description"/>
+                <FIELD NAME="defaultamount" TYPE="float" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" DECIMALS="2" COMMENT="amount" />
+                <FIELD NAME="refundable" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="refundable fee head"/>
+                <FIELD NAME="feecategory" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="fee category fee head belongs to"/>
+                <FIELD NAME="organization" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="organization of fee head"/>
+                <FIELD NAME="deleted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="deleted"/>
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="time creation of fee head"/>
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="time modification of fee head"/>
+                <FIELD NAME="modifierid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false" COMMENT="modified by"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for each entry of fee head ."/>
+            </KEYS>
+        </TABLE>
+    
+    </TABLES>
+</XMLDB>
